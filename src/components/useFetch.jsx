@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 const useFetch = (url) => {
-  const [data, setData] = useState([]);
+  const [cities, setCities] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,7 +12,7 @@ const useFetch = (url) => {
 
       if (res.ok) {
         const response = await res.json();
-        setData(response);
+        setCities(response);
         setLoading(false);
       } else {
         if (
@@ -41,8 +42,8 @@ const useFetch = (url) => {
 
     fetchData();
   }, [url]);
-
-  return { data, error, loading };
+console.log("usefetch:", cities)
+  return { cities, error, loading };
 };
 
 export default useFetch;
