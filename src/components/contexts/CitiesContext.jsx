@@ -3,7 +3,7 @@ import useFetch from "../useFetch";
 
 const CitiesContext = createContext()
 function CitiesProvider({children}){
-    const { cities, loading, error } = useFetch('http://localhost:9000/cities');
+    const { cities, isloading, error } = useFetch('http://localhost:9000/cities');
     const [currentCity, setCurrentCity] = useState({})
     console.log(cities)
     async function getCity (id){
@@ -18,7 +18,7 @@ function CitiesProvider({children}){
             //   setIsLoding(false)
             }
     }
-    return (<CitiesContext.Provider value={{ cities, loading, error, currentCity, getCity}}>
+    return (<CitiesContext.Provider value={{ cities, isloading, error, currentCity, getCity}}>
         {children}
     </CitiesContext.Provider>)
 }
