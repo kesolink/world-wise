@@ -42,7 +42,7 @@ const useFetch = (url) => {
 
     fetchData();
   }, [url]);
-console.log("usefetch:", cities)
+// console.log("usefetch:", cities)
   return { cities, error, loading };
 };
 

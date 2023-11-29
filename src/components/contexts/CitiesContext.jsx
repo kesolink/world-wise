@@ -5,7 +5,7 @@ const CitiesContext = createContext()
 function CitiesProvider({children}){
     const { cities, isloading, error } = useFetch('http://localhost:9000/cities');
     const [currentCity, setCurrentCity] = useState({})
-    console.log(cities)
+    // console.log(cities)
     async function getCity (id){
             try{
             //   setIsLoding(true);
