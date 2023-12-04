@@ -37,7 +37,7 @@ function Form() {
       setIsLoadingGeocoding(true)
       const res = await fetch(`${BASE_URL}?latitude=${lat}&longitude=${lng}`)
       const data = await res.json()
-      console.log(data)
+      // console.log(data)
       if(!data.countryCode) throw new Error("That doen,t seem to be a city. click somwhere else")
       setCityName(data.city || data.locality || "")
       setCountry(data.countryName)
